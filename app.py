@@ -49,12 +49,23 @@ def encode(sentence):
 
 # Function to decode the sentence
 def decode(sentence):
-    # Implement your decode logic here
-    pass
+    words = sentence.split()
+    modified_words = []
+    
+    for i in range(len(words)):
+        if i % 2 == 0:  # Odd words
+           if words[i].startswith('ال'):
+              modified_words.append('ال'+words[i+1][0]+words[i][3:])
+           else: 
+              modified_words.append(words[i+1][0] + words[i][1:])
+        
+    
+    modified_sentence = ' '.join(modified_words)
+    return modified_sentence
 
 # Streamlit app
 def main():
-    st.title("Arabic Sentence Encoder/Decoder")
+    st.title(" السغة لمون Encoder/Decoder")
 
     # User input for encoding/decoding
     input_sentence = st.text_input("Enter a sentence:")
