@@ -73,12 +73,12 @@ def main():
     # Encode button
     if st.button("Encode"):
         encoded_sentence = encode(input_sentence)
-        st.write("Encoded Sentence: " + encoded_sentence)
+        st.write("Encoded Sentence:/n" + encoded_sentence)
 
     # Decode button
     if st.button("Decode"):
         decoded_sentence = decode(input_sentence)
-        st.write("Decoded Sentence: " + decoded_sentence)
+        st.write("Decoded Sentence:/n" + decoded_sentence)
 
 # Run the app
 if __name__ == "__main__":
